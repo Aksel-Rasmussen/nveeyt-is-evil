@@ -14,17 +14,28 @@ function activate(context) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "nveeyt" is now "Neatly Veet"!');
 	console.log('Veet\'lly deet in the beetley wheat.');
-	console.log('Schmeet\'lly dee, kgyeet\'lly doo, Vtyeet a thing and egg. I want but two.')
+	console.log('Schmeet\'lly dee, kgyeet\'lly doo, Vtyeet a thing and egg, I want but two.')
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	const dreamberd_disposable = vscode.commands.registerCommand('nveeyt.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	async function fetchJoke() {
+		const res = await fetch(
+			"https://icanhazdadjoke.com",
+			{
+				"headers": {
+					"Accept": "application/json"
+				}
+			}
+		);
+		const data = await res.json();
+		
+		vscode.window.showInformationMessage(
+			`Dad says: ${data.joke}`
+		)
+	};
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Vyeeet!');
-	});
+	const dreamberd_disposable = vscode.commands.registerCommand('nveeyt.DadJoke', fetchJoke);
 
 	context.subscriptions.push(dreamberd_disposable);
 }

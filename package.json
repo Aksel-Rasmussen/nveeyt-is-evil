@@ -1,7 +1,7 @@
 {
   "name": "nveeyt",
-  "displayName": "Vyeeet",
-  "description": "Sometuhsingue ",
+  "displayName": "Dad Joke Command",
+  "description": "Gets dad jokes from icanhazdadjoke",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.101.0"
@@ -13,8 +13,8 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "nveeyt.helloWorld",
-      "title": "Hello World"
+      "command": "nveeyt.DadJoke",
+      "title": "Dad Joke"
     }]
   },
   "scripts": {

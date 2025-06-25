@@ -1,6 +1,0 @@
-alias whoami='echo root'
-alias whatami='echo nothing'
-alias whereami='pwd'
-alias whenami='date'
-alias whyami='echo 42'
-alias howami="echo that's called your mood"
